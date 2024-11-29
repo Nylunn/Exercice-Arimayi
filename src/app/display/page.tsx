@@ -1,35 +1,21 @@
-'use client';
+"use client";
 
-import { Router, useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-
-interface FormData {
-  name: string;
-  surname: string;
-  email: string;
-}
+import { useSearchParams } from "next/navigation";
 
 const DisplayData = () => {
-  const router = useRouter();
-  const [formData, setFormData] = useState<FormData | null>(null);
+  const searchParams = useSearchParams();
 
-  useEffect(() => {
-    if (router.isReady) {
-      // Récupère les données depuis les query params
-      const { name, surname, email } = router.query;
-      setFormData({ name: name as string, surname: surname as string, email: email as string });
-    }
-  }, [router.query, router.isReady]);
-
-  if (!formData) {
-    return <p>Chargement des données...</p>;
-  }
+  const formData = {
+    name: searchParams.get("name") || "",
+    surname: searchParams.get("surname") || "",
+    email: searchParams.get("email") || "",
+  };
 
   return (
     <div>
       <h1>Données du formulaire</h1>
-      <p><strong>Nom :</strong> {formData.name}</p>
       <p><strong>Prénom :</strong> {formData.surname}</p>
+      <p><strong>Nom :</strong> {formData.name}</p>
       <p><strong>Email :</strong> {formData.email}</p>
     </div>
   );

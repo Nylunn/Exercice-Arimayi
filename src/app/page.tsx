@@ -42,7 +42,7 @@ const Form = () => {
       alert(`Données soumises avec succès : ${JSON.stringify(data)}`);
     } catch (error) {
       console.error('Erreur :', error);
-      alert('Erreur lors de la soumissieeon.');
+      alert('Erreur lors de la soumission.');
     }
   };
 

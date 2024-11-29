@@ -4,13 +4,16 @@ import { NextApiRequest, NextApiResponse } from 'next';
 // Stockage temporaire 
 let formData: Array<{ surname: string; name: string; email: string; }> = [];
 
-
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  console.log('Request method:', 'POST'); // Log de la méthode
+  console.log('Request body:', 'POST'); // Log du corps de la requête
+  
   if (req.method === 'POST') {
     // Récupère les données du formulaire envoyées dans le body
     const { surname, name, email } = req.body;
 
-    if (!name || !surname  || !email) {
+    if (!name || !surname || !email) {
+      console.error('Missing fields');
       return res.status(400).json({ message: 'Tous les champs sont obligatoires.' });
     }
 
@@ -21,9 +24,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   } else if (req.method === 'GET') {
     // Retourne les données stockées
     return res.status(200).json(formData);
-  } else {
-    // Méthode non supportée
-    return res.status(405).json({ message: 'Méthode non autorisée.' });
   }
 }
-
