@@ -14,8 +14,49 @@
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+main {
+  background-color: #808080;  
+}
+
+h1 {
+  background-color: #808080;
+}
+form {
+  background-color: #808080
+}
+input {
+  background-color: #808080;
+}
+.link{
+  color: white;
+  font-size: 25px;
+  transition: all 0.75s;
+}
+.link:hover{
+  color: rgb(48, 47, 47);
+}
+
+.link-menu{
+  color: black;
+  font-size: 25px;
+  transition: all 0.75s;
+}
+
+.link-menu:hover{
+  color: rgb(75, 74, 74);
+}
+
+.FormCandidats{
+  margin-top: -80px;
+  margin-left: -80px;
+  padding: 120px;
+  transition: all 1s;
+}
+
+.FormCandidats:hover{
+  color: white;
+ }
+
+.divform{
+  zoom: 75%;
 }
