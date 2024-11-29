@@ -39,7 +39,7 @@ input {
 .link-menu{
   color: black;
   font-size: 25px;
-  transition: all 0.75s;
+  transition: all 0.25s;
 }
 
 .link-menu:hover{
@@ -50,7 +50,7 @@ input {
   margin-top: -80px;
   margin-left: -80px;
   padding: 120px;
-  transition: all 1s;
+  transition: all 0.25s;
 }
 
 .FormCandidats:hover{
@@ -60,3 +60,15 @@ input {
 .divform{
   zoom: 75%;
 }
+
+
+.recrutementText{
+  font-size: 25px;
+  font-family: Poppins;
+  transition: all 0.5s;
+}
+
+.recrutementText:hover{
+  color:rgb(206, 47, 47);
+}
+

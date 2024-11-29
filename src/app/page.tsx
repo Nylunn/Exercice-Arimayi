@@ -1,30 +1,83 @@
-"use client";
+'use client'; // Assure le rendu côté client
 
-import { useSelector,useDispatch } from "react-redux"
-import { RootState } from "./store/store"
-import { decrement, increment } from "./store/slice"
-import Link from "next/link";
-import { Button } from "antd";
+import { useState } from 'react';
 
-export default function Home() {
-    const count = useSelector((state: RootState) => state.counter.value)
-    const dispatch = useDispatch()
-
-    return (
-      <><div className="divform"style={{paddingLeft:15,paddingTop:25, margin:10, fontSize:25, fontFamily:'Poppins'}}>
-      <h1>Formulaire à remplir</h1>
-          <form action="POST" className="FormCandidats">
-            <label htmlFor="FirstName">Prénom :</label>
-            <input type="text" id="FirstName" placeholder=" John"/> <br />
-            <label htmlFor="Name">Nom :</label>
-            <input type="text" id="Name" placeholder=" Doe"/> <br />
-            <label htmlFor="number">Numéro :</label>
-            <input type="text" id="number" placeholder=" 06.24.25.36.35"/> <br />
-            <label htmlFor="work">Métier :</label>
-            <input type="text" id="work" placeholder=" Développeur Front-End"/> <br />
-            <button type="submit" className="Button-Form" style={{marginTop:15, marginLeft:75, padding:20, paddingBottom:10, paddingTop:10, color:"green", borderRadius:20, border:"solid", alignItems:"center"}}>ENVOYER</button>
-          </form>
-          </div>
-          </>
-    )
+interface FormData {
+  name: string;
+  surname: string;
+  email: string;
 }
+
+const Form = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    surname: '',
+    email: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Données envoyées :', formData);
+
+    try {
+      const response = await fetch('/api', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Erreur lors de la soumission du formulaire');
+      }
+
+      const data = await response.json();
+      alert(`Données soumises avec succès : ${JSON.stringify(data)}`);
+    } catch (error) {
+      console.error('Erreur :', error);
+      alert('Erreur lors de la soumissieeon.');
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Nom :</label>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <label>Prénom :</label>
+        <input
+          type="text"
+          name="surname"
+          value={formData.surname}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <label>Email :</label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+      </div>
+      <button type="submit">Envoyer</button>
+    </form>
+  );
+};
+
+export default Form;
