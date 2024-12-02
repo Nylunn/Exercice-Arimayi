@@ -1,3 +1,4 @@
+
 import { getI18n } from "../locales/server";
 
  // Assure le rendu côté client
@@ -12,14 +13,15 @@ export default async function Home() {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label className='results'>{t ("hello")} :</label>
+        <h1>{t ("forms")} : </h1>
+        <label className='results'>{t ("firstname")}:</label>
         <input
           type="text"
           name="name"
         />
       </div>
       <div>
-        <label className='results'>Prénom :</label>
+        <label className='results'>{t ("name")} :</label>
         <input
           type="text"
           name="surname"
@@ -32,7 +34,7 @@ export default async function Home() {
           name="email"
         />
       </div>
-      <button type="submit" className='submit_btn'>Envoyer</button>
+      <button type="submit" className='submit_btn'>{t ("send")}</button>
     </form>
   );
 };
