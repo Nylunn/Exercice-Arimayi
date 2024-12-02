@@ -1,6 +1,5 @@
 "use client";
 
-import fakedata from "../data/fakedata";
 
 const DisplayData = () => {
 

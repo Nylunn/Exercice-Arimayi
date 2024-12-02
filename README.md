@@ -1,10 +1,4 @@
 ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-
-
 #Bienvenue sur le repository de l'exercice AriMayi,
 
 - Pré-requis : Github Desktop (pas obligatoire), et VSCode.
