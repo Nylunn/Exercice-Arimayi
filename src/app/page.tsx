@@ -49,7 +49,7 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Nom :</label>
+        <label className='results'>Nom :</label>
         <input
           type="text"
           name="name"
@@ -58,7 +58,7 @@ const Form = () => {
         />
       </div>
       <div>
-        <label>Prénom :</label>
+        <label className='results'>Prénom :</label>
         <input
           type="text"
           name="surname"
@@ -67,7 +67,7 @@ const Form = () => {
         />
       </div>
       <div>
-        <label>Email :</label>
+        <label className='results'>Email :</label>
         <input
           type="email"
           name="email"
@@ -75,7 +75,7 @@ const Form = () => {
           onChange={handleChange}
         />
       </div>
-      <button type="submit">Envoyer</button>
+      <button type="submit" className='submit_btn'>Envoyer</button>
     </form>
   );
 };

@@ -13,10 +13,10 @@ const DisplayData = () => {
 
   return (
     <div>
-      <h1>Données du formulaire</h1>
-      <p><strong>Prénom :</strong> {formData.surname}</p>
-      <p><strong>Nom :</strong> {formData.name}</p>
-      <p><strong>Email :</strong> {formData.email}</p>
+      <h1 className="form">Liste des candidats :</h1>
+      <p className="results">Prénom : {formData.surname}</p>
+      <p className="results">Nom : {formData.name}</p>
+      <p className="results">Email : {formData.email}</p>
     </div>
   );
 };
