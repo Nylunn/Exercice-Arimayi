@@ -1,24 +1,19 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import fakedata from "../data/fakedata";
 
 const DisplayData = () => {
-  const searchParams = useSearchParams();
 
-  const formData = {
-    name: searchParams.get("name") || "",
-    surname: searchParams.get("surname") || "",
-    email: searchParams.get("email") || "",
-  };
+
 
   return (
     <div>
-      <h1 className="form">Liste des candidats :</h1>
-      <p className="results">Prénom : {formData.surname}</p>
-      <p className="results">Nom : {formData.name}</p>
-      <p className="results">Email : {formData.email}</p>
+      <h1 className="form">Liste des candidats : </h1>
+      <p className="results">Prénom : <strong>Théodort</strong></p>
+      <p className="results">Nom : thassur</p>
+      <p className="results">Email : <a href="mailto:theodortthassur@gmail.com">theodortthassur@gmail.com</a></p>
     </div>
   );
-};
+}
 
 export default DisplayData;

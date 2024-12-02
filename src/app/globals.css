@@ -108,10 +108,19 @@ input {
 .submit_btn:hover{
   color: white;
   background-color: black;
-  transition: all 0.25s;
 }
 
 .submit_btn:active{
   color: white;
   background-color: green;
+}
+
+input{
+  border-radius: 20px;
+  background-color: white;
+  transition: all 0.5s;
+}
+
+input:hover{
+  background-color: rgb(203, 199, 199);
 }
