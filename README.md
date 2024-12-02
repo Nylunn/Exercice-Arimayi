@@ -9,5 +9,8 @@
 
 !Une fois ses étapes réaliser, nous allons pouvoir lancer notre serveur local.
 
-+ Pour lancer le serveur local veuillez effectuer la commande suivante dans le terminal de l'IDE -> npm run dev , celui-ci vous enverrez un lien (localhost:3000) ouvrez-le ou rendez-vous dessus manuellement afin de voir le projet en fonctionnement. 
++ Pour lancer le serveur local veuillez effectuer la commande suivante dans le terminal de l'IDE -> npm run dev ,
++ celui-ci vous enverrez un lien (localhost:3000) ouvrez-le ou rendez-vous dessus manuellement afin de voir le projet en fonctionnement.
+
++ Le diagram représentant le déroulement du projet est dans la branch "Diagram" 
 ```
