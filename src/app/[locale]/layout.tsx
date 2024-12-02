@@ -9,6 +9,7 @@ import AppSideMenu from "./components/AppSideMenu";
 import Sider from "antd/es/layout/Sider";
 import { Content } from "antd/es/layout/layout";
 import { Providers } from "./providers";
+import { I18nProviderClient } from "../locales/client";
 
 
 const geistSans = localFont({
@@ -40,7 +41,7 @@ export default function RootLayout({
     <StoreProvider>
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Providers locale={params.locale}>{children}</Providers>
+        <I18nProviderClient locale={params.locale}>{children}</I18nProviderClient>
         <AntdRegistry> 
           <Layout>
           <AppHeader/>

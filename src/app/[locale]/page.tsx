@@ -1,60 +1,21 @@
-'use client'; // Assure le rendu côté client
+import { getI18n } from "../locales/server";
 
-import { useState } from 'react';
+ // Assure le rendu côté client
+export default async function Home() {
 
-interface FormData {
-  name: string;
-  surname: string;
-  email: string;
-}
+  const t = await getI18n();
 
-const Form = () => {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    surname: '',
-    email: '',
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Données envoyées :', formData);
-
-    try {
-      const response = await fetch('/api', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error('Erreur lors de la soumission du formulaire');
-      }
-
-      const data = await response.json();
-      alert(`Données soumises avec succès : ${JSON.stringify(data)}`);
-    } catch (error) {
-      console.error('Erreur :', error);
-      alert('Erreur lors de la soumission.');
-    }
+  const handleSubmit = async () => {
+    console.log("Formulaire envoyer avec succès")
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label className='results'>Nom :</label>
+        <label className='results'>{t ("hello")} :</label>
         <input
           type="text"
           name="name"
-          value={formData.name}
-          onChange={handleChange}
         />
       </div>
       <div>
@@ -62,8 +23,6 @@ const Form = () => {
         <input
           type="text"
           name="surname"
-          value={formData.surname}
-          onChange={handleChange}
         />
       </div>
       <div>
@@ -71,8 +30,6 @@ const Form = () => {
         <input
           type="email"
           name="email"
-          value={formData.email}
-          onChange={handleChange}
         />
       </div>
       <button type="submit" className='submit_btn'>Envoyer</button>
@@ -80,4 +37,5 @@ const Form = () => {
   );
 };
 
-export default Form;
+
+
