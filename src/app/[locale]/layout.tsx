@@ -8,6 +8,7 @@ import AppHeader from "./components/AppHeader";
 import AppSideMenu from "./components/AppSideMenu";
 import Sider from "antd/es/layout/Sider";
 import { Content } from "antd/es/layout/layout";
+import { Providers } from "./providers";
 
 
 const geistSans = localFont({
@@ -28,13 +29,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+  params,
+}: Readonly<{
   children: React.ReactNode;
-}) {
+  params: {
+    locale: string;
+  }
+}>) {
   return (
     <StoreProvider>
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Providers locale={params.locale}>{children}</Providers>
         <AntdRegistry> 
           <Layout>
           <AppHeader/>
