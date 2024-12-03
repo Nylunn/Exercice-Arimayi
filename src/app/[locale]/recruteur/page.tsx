@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { getI18n } from "@/app/locales/server";
+import { getI18n } from "@/locales/server";
 export default async function recruteur() {
     const t = await getI18n();
     return (

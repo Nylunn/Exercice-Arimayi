@@ -1,11 +1,12 @@
 "use client";
 import { Button } from "antd";
-import { getI18n } from "../locales/server";
+import { useI18n } from "../../locales/client"
+
 
  // Assure le rendu côté client
 export default async function Home() {
 
-  const t = await getI18n();
+  const t = await useI18n();
 
   const handleSubmit = async () => {
     console.log("Formulaire envoyer avec succès")

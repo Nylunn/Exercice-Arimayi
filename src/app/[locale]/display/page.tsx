@@ -1,12 +1,10 @@
 "use client";
-
-import { getI18n } from "@/app/locales/server";
-
-
-  const t = await getI18n();
+import { useI18n } from "../../../locales/client"
 
 
 export default async function recruteur(){
+  const t = await useI18n();
+
   return (
     <div>
       <h1 className="form">{t("list")} </h1>
