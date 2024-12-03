@@ -10,7 +10,7 @@ import Sider from "antd/es/layout/Sider";
 import { Content } from "antd/es/layout/layout";
 import { Providers } from "./providers";
 import { I18nProviderClient } from "../locales/client";
-
+import { Typography } from "antd";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,6 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <StoreProvider>
+      <Typography>
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <I18nProviderClient locale={params.locale}>{children}</I18nProviderClient>
@@ -62,6 +63,7 @@ export default function RootLayout({
           </AntdRegistry>
         </body>
     </html>
+    </Typography>
     </StoreProvider>
   );
 }

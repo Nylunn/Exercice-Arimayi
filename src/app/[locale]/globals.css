@@ -124,3 +124,11 @@ input{
 input:hover{
   background-color: rgb(203, 199, 199);
 }
+
+.navbar{
+  background:white;
+  border: #f1f1f1;
+  display: flex;
+  align-items: center;
+  align-content: space-between; 
+}

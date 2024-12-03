@@ -1,4 +1,5 @@
-
+"use client";
+import { Button } from "antd";
 import { getI18n } from "../locales/server";
 
  // Assure le rendu côté client
@@ -34,7 +35,7 @@ export default async function Home() {
           name="email"
         />
       </div>
-      <button type="submit" className='submit_btn'>{t ("send")}</button>
+      <Button type="primary" className='submit_btn'>{t ("send")}</Button>
     </form>
   );
 };

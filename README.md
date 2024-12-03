@@ -14,3 +14,4 @@
 
 + Le diagram représentant le déroulement du projet est dans la branch "Diagram" 
 ```
+
