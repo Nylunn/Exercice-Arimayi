@@ -15,10 +15,7 @@ import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import { setRequestLocale } from "next-intl/server";
  
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({locale}));
-}
- 
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,7 +34,10 @@ export const metadata: Metadata = {
 };
 
 
-
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({locale}));
+}
+ 
 
 
 export default async function RootLayout({
@@ -57,11 +57,9 @@ export default async function RootLayout({
   return (
     <StoreProvider>
       <Typography>
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
         <AntdRegistry> 
           <Layout>
           <AppHeader/>
@@ -80,6 +78,7 @@ export default async function RootLayout({
           </Layout>
           </Layout>
           </AntdRegistry>
+        </NextIntlClientProvider>
         </body>
     </html>
     </Typography>

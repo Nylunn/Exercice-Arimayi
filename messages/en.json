@@ -1,6 +1,17 @@
 {
     "HomePage": {
-      "title": "Hello world!",
-      "about": "Go to the about page"
+      "title": "Forms to candidates!",
+      "about": "Go to the about page",
+      "firstname": "FirstName",
+      "name": "Nom"
+    },
+    "recrutement": {
+      "title": "Welcome to the recruitements page, choose a category to continue.",
+      "return": "Return",
+      "display": "List of candidates"
+    },
+    "display": {
+      "firstname": "FirstName",
+      "name": "Nom"
     }
   }

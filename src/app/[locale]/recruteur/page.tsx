@@ -1,12 +1,15 @@
-import Link from "next/link"
-import { getI18n } from "@/locales/server";
-export default async function recruteur() {
-    const t = await getI18n();
+import {Link} from '@/i18n/routing';
+import {useTranslations} from 'next-intl';
+
+
+export default function recruteur() {
+
+    const t = useTranslations("recrutement");
     return (
         <div>
-        <h1 className="recrutementText">{t("recrutement")}</h1>
-        <Link href="./" className="link">{t("home")}</Link> <br />
-        <Link href="/display" className="link">{t("list")}</Link>
+        <h1 className="recrutementText">{t("name")}</h1>
+        <Link href="./" className="link">{t("return")}</Link> <br />
+        <Link href="/display" className="link">{t("display")}</Link>
            </div>
     )
 }

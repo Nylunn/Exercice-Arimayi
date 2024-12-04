@@ -1,7 +1,6 @@
 "use client";
 import { Button } from "antd";
 import {useTranslations} from 'next-intl';
-import {Link} from '@/i18n/routing';
 
 
 export default  function Home() {
@@ -12,18 +11,20 @@ export default  function Home() {
   return (
     <form>
       <div>
-        <h1>{t("title")} : </h1>
-        <label className='results'>Formulaire des candidats:</label>
-        <input
-          type="text"
-          name="name"
-        />
+        <h1 className="results">{t("title")}</h1>
       </div>
       <div>
-        <label className='results'> surname:</label>
+        <label className='results'>{t("firstname")}:</label>
         <input
           type="text"
           name="surname"
+        />
+      </div>
+      <div>
+        <label className='results'>{t("name")}:</label>
+        <input
+          type="text"
+          name="name"
         />
       </div>
       <div>
@@ -32,7 +33,6 @@ export default  function Home() {
           type="email"
           name="email"
         />
-      <Link href="/about">{t('about')}</Link>
       </div>
       <Button type="primary" className='submit_btn'>Envoyer</Button>
     </form>

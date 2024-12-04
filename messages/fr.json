@@ -1,6 +1,17 @@
 {
     "HomePage": {
-      "title": "Salut monde!",
-      "about": "Aller a la page a propos"
+      "title": "Formulaire des candidats:",
+      "about": "Aller a la page a propos",
+      "firstname": "Prénom",
+      "name": "Nom"
+    },
+    "recrutement": {
+      "title": "Bienvenue sur la page Recruteur, choisissez une catégories pour continuer.",
+      "return": "Retour",
+      "display": "Liste des candidats"
+    },
+    "display": {
+      "firstname": "Prénom",
+      "name": "Nom"
     }
   }
