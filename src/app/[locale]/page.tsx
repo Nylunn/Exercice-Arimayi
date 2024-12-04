@@ -1,29 +1,26 @@
 "use client";
 import { Button } from "antd";
-import { useI18n } from "../../locales/client"
+import {useTranslations} from 'next-intl';
+import {Link} from '@/i18n/routing';
 
 
- // Assure le rendu côté client
-export default async function Home() {
+export default  function Home() {
 
-  const t = await useI18n();
+  const t = useTranslations('HomePage');
 
-  const handleSubmit = async () => {
-    console.log("Formulaire envoyer avec succès")
-  };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div>
-        <h1>{t ("forms")} : </h1>
-        <label className='results'>{t ("firstname")}:</label>
+        <h1>{t("title")} : </h1>
+        <label className='results'>Formulaire des candidats:</label>
         <input
           type="text"
           name="name"
         />
       </div>
       <div>
-        <label className='results'>{t ("name")} :</label>
+        <label className='results'> surname:</label>
         <input
           type="text"
           name="surname"
@@ -35,11 +32,9 @@ export default async function Home() {
           type="email"
           name="email"
         />
+      <Link href="/about">{t('about')}</Link>
       </div>
-      <Button type="primary" className='submit_btn'>{t ("send")}</Button>
+      <Button type="primary" className='submit_btn'>Envoyer</Button>
     </form>
   );
 };
-
-
-
