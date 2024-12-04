@@ -6,7 +6,7 @@ import {Link} from '@/i18n/routing';
 
 export default  function Home() {
 
-  const t = useTranslations('HomePage');
+  const t = useTranslations("HomePage");
 
 
   return (
