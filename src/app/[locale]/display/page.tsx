@@ -13,4 +13,5 @@ export default function recruteur(){
       <p className="results">Email : <a href="mailto:theodortthassur@gmail.com">theodortthassur@gmail.com</a></p>
     </div>
   );
+  
 }

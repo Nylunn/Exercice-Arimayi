@@ -11,7 +11,6 @@ function AppSideMenu() {
     return (
         <Menu mode="inline" items={menuItems}></Menu>
     )
-
 }
 
 export default AppSideMenu;

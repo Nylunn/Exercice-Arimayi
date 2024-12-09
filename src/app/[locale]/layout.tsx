@@ -78,7 +78,7 @@ export default async function RootLayout({
           </Layout>
           </Layout>
           </AntdRegistry>
-        </NextIntlClientProvider>
+      </NextIntlClientProvider>
         </body>
     </html>
     </Typography>

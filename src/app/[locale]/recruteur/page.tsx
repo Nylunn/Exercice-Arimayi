@@ -11,5 +11,6 @@ export default function recruteur() {
         <Link href="./" className="link">{t("return")}</Link> <br />
         <Link href="/display" className="link">{t("display")}</Link>
            </div>
-    )
+    );
+
 }

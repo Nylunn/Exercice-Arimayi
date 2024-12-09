@@ -37,4 +37,5 @@ export default  function Home() {
       <Button type="primary" className='submit_btn'>Envoyer</Button>
     </form>
   );
+  
 };
